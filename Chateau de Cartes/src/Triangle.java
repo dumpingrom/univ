@@ -102,12 +102,15 @@ public class Triangle {
     }
 
    static public void afficheTout(){
+	   //ArrayList contenant des String qui sera utilise pour l'affichage des lignes
 	   ArrayList<String> content = new ArrayList<String>();
+	   //numero de la ligne en cours
 	   int line = 0;
 	   
 	   if (Triangle.base != null){		   
 		   Triangle current = Triangle.base;
 		   
+		   //on parcourt les triangles poses sur la table
 		   while(current != null){
 			   line = 0;
 			   System.out.println("CURRENTLOOP, Set line to 0");
@@ -123,18 +126,18 @@ public class Triangle {
 				   }
 			   }
 			   
-			   
+			   //on parcourt dans la direction DessusDroite pour chaque triangle pose sur la table
 			   Triangle currentUp = current.dessusDroite;
 			   while(currentUp != null){
 				   line ++;
 				   System.out.println("CURRENTUP LOOP, set line to "+line);
 				   if(line >= content.size()){
 					   content.add("/\\");
-					   System.out.println("add /\\ to line "+line);
+					   //System.out.println("add /\\ to line "+line);
 				   }
 				   else{
 					   content.set(line, content.get(line)+"/\\");
-					   System.out.println("append /\\ to line "+line);
+					   //System.out.println("append /\\ to line "+line);
 				   }
 				   currentUp = currentUp.dessusDroite;
 			   }
@@ -142,17 +145,17 @@ public class Triangle {
 			   
 			   if(line+1 >= content.size()){
 				   content.add("\u00A0\u00A0");
-				   System.out.println("add space to line "+line+1);
+				   //System.out.println("add space to line "+line+1);
 			   }
 			   else{
 				   content.set(line+1, content.get(line+1)+"\u00A0\u00A0");
-				   System.out.println("append space to line "+line+1);
+				   //System.out.println("append space to line "+line+1);
 			   }
 			   current = current.droite;
 		   }
 		   
 		   
-		   //Affichage des lignes
+		   //Affichage des lignes - parcours de l'ArrayList a l'envers
 		   for (int i = content.size()-1; i >= 0; i--){
 			   for (int j = i; j>0; j--){
 				   //ajout espace pour decalage (1 espace pour ligne 1, 2 espaces pour ligne 2...)
@@ -162,6 +165,7 @@ public class Triangle {
 		   }
 		   
 	   }
+	   //si base = null alors affichage d'un message, aucun triangle n'est affiche
 	   else{
 		   System.out.println("Aucun triangle sur la table...");
 	   }
