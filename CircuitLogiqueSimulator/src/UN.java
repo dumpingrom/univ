@@ -1,9 +1,9 @@
 
-public class ZERO extends Composant{
-	public ZERO() {
+public class UN extends Composant{
+	public UN() {
 		super();
 		// TODO Auto-generated constructor stub
-		this.setEtat(0);
+		this.setEtat(1);
 	}
 
 	@Override

@@ -8,17 +8,15 @@ public abstract class Composant {
 		
 	}
 	
-	public void raccorde(Composant c) throws ArrayIndexOutOfBoundsException {
-		for (int i = 0; i < this.entrees.length + 1; i++) {
-			try {
-				if(this.entrees[i] == null) {
-					System.out.println("Checking entree "+i);
-					this.entrees[i] = c;
-					System.out.println(this.entrees[i]);
-					break;
-				}
-			} catch(Exception e) {
-				e.printStackTrace();
+	public void raccorde(Composant c) {
+		for (int i = 0; i < this.entrees.length; i++) {
+			if(this.entrees[i] == null) {
+				//System.out.println("Checking entree "+i+"...");
+				this.entrees[i] = c;
+				c.setSortie(this);
+				c.miseAJour();
+				//System.out.println(this + "\nentree: "+ c + "\nsortie: "+ c.getSortie());
+				break;
 			}
 		}
 	}
@@ -27,6 +25,10 @@ public abstract class Composant {
 	
 	public void setEtat (int e) {
 		this.etat = e;
+	}
+	
+	public int getEtat() {
+		return this.etat;
 	}
 	
 	public void setSortie(Composant A) {

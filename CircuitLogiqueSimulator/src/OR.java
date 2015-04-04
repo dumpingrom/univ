@@ -1,6 +1,6 @@
 
-public class AND extends Composant {
-	public AND() {
+public class OR extends Composant {
+	public OR() {
 		this.entrees = new Composant[2];
 		this.entrees[0] = null;
 		this.entrees[1] = null;
@@ -13,7 +13,7 @@ public class AND extends Composant {
 		//System.out.println("Entree 0 => "+this.entrees[0]);
 		//System.out.println("Entree 1 => "+this.entrees[1]);
 		if(this.entrees[0] != null && this.entrees[1] != null) {
-			if(this.entrees[0].getEtat() == 1 && this.entrees[1].getEtat() == 1) {
+			if(this.entrees[0].getEtat() == 1 || this.entrees[1].getEtat() == 1) {
 				this.setEtat(1);
 			}
 			else {
@@ -28,5 +28,4 @@ public class AND extends Composant {
 			this.getSortie().miseAJour();
 		}
 	}
-
 }
