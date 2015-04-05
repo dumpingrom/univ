@@ -1,0 +1,8 @@
+<map id="Composant" name="Composant">
+<area shape="rect" id="node3" href="$class_a_n_d.html" title="AND" alt="" coords="5,83,56,112"/>
+<area shape="rect" id="node5" href="$class_l_e_d.html" title="LED" alt="" coords="80,83,128,112"/>
+<area shape="rect" id="node7" href="$class_n_o_t.html" title="NOT" alt="" coords="152,83,203,112"/>
+<area shape="rect" id="node9" href="$class_o_r.html" title="OR" alt="" coords="227,83,269,112"/>
+<area shape="rect" id="node11" href="$class_u_n.html" title="UN" alt="" coords="293,83,336,112"/>
+<area shape="rect" id="node13" href="$class_z_e_r_o.html" title="ZERO" alt="" coords="360,83,419,112"/>
+</map>

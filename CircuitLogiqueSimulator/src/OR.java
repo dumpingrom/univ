@@ -5,13 +5,19 @@ public class OR extends Composant {
 		this.entrees[0] = null;
 		this.entrees[1] = null;
 		this.sortie = null;
+		this.etat = -1;
 	}
+	
+	/**
+	 * miseAJour OR
+	 * 
+	 * Verification de l'existence de Composant dans les 2 entrees, sinon etat << -1 
+	 * Si l'une des deux entrees possede un etat de 1, mise a jour de l'etat pour 1, sinon 0
+	 */
 
 	@Override
 	void miseAJour() {
 		// TODO Auto-generated method stub
-		//System.out.println("Entree 0 => "+this.entrees[0]);
-		//System.out.println("Entree 1 => "+this.entrees[1]);
 		if(this.entrees[0] != null && this.entrees[1] != null) {
 			if(this.entrees[0].getEtat() == 1 || this.entrees[1].getEtat() == 1) {
 				this.setEtat(1);
@@ -21,9 +27,8 @@ public class OR extends Composant {
 			}			
 		}
 		else {
-			this.setEtat(0);
+			this.setEtat(-1);
 		}
-		//System.out.println("Etat => "+this.getEtat());
 		if(this.getSortie() != null) {
 			this.getSortie().miseAJour();
 		}

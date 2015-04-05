@@ -1,0 +1,42 @@
+/**
+ * 
+ * @author romain
+ * 
+ * Classe NOT
+ *
+ */
+public class NOT extends Composant{
+	/**
+	 * Constructeur
+	 * Initialisation du tableau de Composant en entree (1 seule entree)
+	 * Initialisation a null des attributs entree, sortie et etat
+	 */
+	NOT() {
+		this.entrees = new Composant[1];
+		this.entrees[0] = null;
+		this.sortie = null;
+		this.etat = -1;
+	}
+
+	/**
+	 * miseAJour (methode abstraite heritee de la classe abstraite Composant
+	 * 
+	 * Verifie l'etat du Composant en entree et prend pour etat l'opposé de celui-ci
+	 * Appelle la methode miseAjour du Composant en sortie s'il existe
+	 * 
+	 */
+	@Override
+	void miseAJour() {
+		// TODO Auto-generated method stub
+		if(this.entrees[0].getEtat() == 1) {
+			this.setEtat(0);
+		}
+		else {
+			this.setEtat(1);
+		}
+		if(this.getSortie() !=  null) {
+			this.getSortie().miseAJour();
+		}
+	}
+
+}

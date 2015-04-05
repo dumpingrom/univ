@@ -7,6 +7,13 @@ public class AND extends Composant {
 		this.sortie = null;
 	}
 
+	/**
+	 * miseAJour AND
+	 * 
+	 * Verification de l'existence de Composant dans les 2 entrees,sinon etat << -1
+	 * Si les deux entrees possede un etat de 1, mise a jour de l'etat pour 1, sinon 0
+	 */
+	
 	@Override
 	void miseAJour() {
 		// TODO Auto-generated method stub

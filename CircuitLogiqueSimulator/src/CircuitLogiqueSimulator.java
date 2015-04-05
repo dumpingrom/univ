@@ -8,10 +8,12 @@ public class CircuitLogiqueSimulator {
 		UN un1 = new UN();
 		UN un2 = new UN();
 		ZERO zero = new ZERO();
+		NOT not = new NOT();
 		LED led1 = new LED("LED 1");
-		ou.raccorde(un1);
-		ou.raccorde(zero);
-		led1.raccorde(ou);
+		et.raccorde(un1);
+		et.raccorde(un2);
+		not.raccorde(et);
+		led1.raccorde(not);
 	}
 
 }
