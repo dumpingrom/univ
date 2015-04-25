@@ -14,6 +14,14 @@ public class Triangle {
 
     public static Triangle base;
 
+    /**
+     * Cette methode permet de poser un Triangle sur la table
+     * elle verifie si la table est vide et assigne le Triangle courant a l'attribut
+     * static base si tel est le cas
+     * 
+     * on parcourt ensuite les triangles poses sur la table de gauche a droite jusqu a
+     * trouver un emplacement vide
+     */
     void poseSurTable(){
     	//System.out.println("poseSurTable ==> Base = "+Triangle.base);
     	if (Triangle.base == null){
@@ -29,14 +37,18 @@ public class Triangle {
     		};
     		this.gauche = current;
     		current.droite = this;
-    		System.out.println("gauche du triangle pose sur table = "+this.gauche);
-    		System.out.println("droite du triangle de gauche = "+current.droite);
-    		System.out.println("devrait etre egal a = "+this);
+    		//System.out.println("gauche du triangle pose sur table = "+this.gauche);
+    		//System.out.println("droite du triangle de gauche = "+current.droite);
+    		//System.out.println("devrait etre egal a = "+this);
     	}
     	//System.out.println("this.gauche = "+this.gauche);
     	//System.out.println("this.droite = "+this.droite);
     }
 
+    /**
+     * Cette methode permet de poser un Triangle au dessus (en haut a droite)
+     * d'un autre Triangle
+     */
     void poseSur(Triangle t){
     	
     	if(t.droite != null){
@@ -57,10 +69,14 @@ public class Triangle {
     	}
     	else{
     		System.out.println("Impossible");
-    		System.out.println("t.droite = "+t.droite);
+    		//System.out.println("t.droite = "+t.droite);
     	}
     }
 
+    /**
+     * Cette methode permet de retirer un Triangle
+     * Appels recursifs si le Triangle retire en soutenait d'autres
+     */
     void retire(){
     	if(this == Triangle.base){
     		Triangle.base = null;
@@ -101,6 +117,7 @@ public class Triangle {
     	
     }
 
+    
    static public void afficheTout(){
 	   //ArrayList contenant des String qui sera utilise pour l'affichage des lignes
 	   ArrayList<String> content = new ArrayList<String>();
@@ -113,16 +130,16 @@ public class Triangle {
 		   //on parcourt les triangles poses sur la table
 		   while(current != null){
 			   line = 0;
-			   System.out.println("CURRENTLOOP, Set line to 0");
+			   //System.out.println("CURRENTLOOP, Set line to 0");
 			   if(line >= content.size()){
 				   content.add("/\\");
-				   System.out.println("add /\\ to line "+line);
+				   //System.out.println("add /\\ to line "+line);
 			   }
 			   else{
 				   content.set(line, content.get(line)+"/\\");
 				   if(current.droite == null){
 					   content.set(line, content.get(line)+"  ");
-					   System.out.println("append /\\ to line "+line);
+					   //System.out.println("append /\\ to line "+line);
 				   }
 			   }
 			   
@@ -130,7 +147,7 @@ public class Triangle {
 			   Triangle currentUp = current.dessusDroite;
 			   while(currentUp != null){
 				   line ++;
-				   System.out.println("CURRENTUP LOOP, set line to "+line);
+				   //System.out.println("CURRENTUP LOOP, set line to "+line);
 				   if(line >= content.size()){
 					   content.add("/\\");
 					   //System.out.println("add /\\ to line "+line);
