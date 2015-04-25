@@ -1,0 +1,10 @@
+
+public class ThreadTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		T1 t1 = new T1("Compteur #1");
+		t1.start();
+	}
+
+}

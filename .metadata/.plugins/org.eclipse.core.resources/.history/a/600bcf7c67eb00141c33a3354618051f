@@ -1,0 +1,52 @@
+/**
+ * @author romain
+ * La classe Poids est une classe generale pour les poids et les paquets (classe fille)
+ * les poids possedent deux attributs, l'entier grammes correspondant a leur poids
+ * en grammes, l'entier pos correspondant a leur position sur le plateau
+ *
+ */
+public class Poids {
+	protected int grammes;
+	int pos = -1;
+	
+	/**
+	 * Constructeur de la classe Poids
+	 * @param g poids en grammes
+	 */
+	Poids(int g) {
+		this.grammes = g;
+	}
+	
+	/**
+	 * Permet de changer le poids en grammes d'une instance de Poids
+	 * @param g (int) nouvelle valeur grammes du Poids
+	 */
+	void setGrammes(int g) {
+		this.grammes = g;
+	}
+	
+	/**
+	 * Retourne le poids en gramme d'une instance de Poids
+	 * @return le poids en grammes de l'instance de Poids courante
+	 */
+	int getGrammes() {
+		return this.grammes;
+	}
+	
+	/**
+	 * Cette methode permettant d'assigner une nouvelle valeur a l'attribut pos
+	 * est appellee par la methode poser() de la classe Plateau
+	 * @param i entier - position sur le Plateau
+	 */
+	void setPos(int i) {
+		this.pos = i;
+	}
+	
+	/**
+	 * 
+	 * @return int pos - la position de l'instance de Poids courante sur le Plateau
+	 */
+	int getPos() {
+		return this.pos;
+	}
+}

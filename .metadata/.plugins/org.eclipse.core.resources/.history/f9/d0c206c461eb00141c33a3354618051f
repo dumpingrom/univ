@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+/**
+ * @author romain
+ * La classe Plateau possede un attribut unique, l'ArrayList poidsPoses 
+ * contenant les poids poses sur le Plateau
+ *
+ */
+public class Plateau {
+	ArrayList<Poids> poidsPoses;
+	
+	Plateau() {
+		this.poidsPoses = new ArrayList<>();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	ArrayList<Poids> getPoidsPoses() {
+		return this.poidsPoses;
+	}
+	
+	void poser(Poids p) {
+		this.poidsPoses.add(p);
+		p.setPos(this.getPoidsPoses().size()-1);
+	}
+	
+	void retirer(Poids p) {
+		this.poidsPoses.remove(p.getPos());
+	}
+}

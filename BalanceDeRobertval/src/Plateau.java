@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+
+/**
+ * @author romain
+ * La classe Plateau possede un attribut unique, l'ArrayList poidsPoses 
+ * contenant les poids poses sur le Plateau
+ *
+ */
+public class Plateau {
+	ArrayList<Poids> poidsPoses;
+	
+	Plateau() {
+		this.poidsPoses = new ArrayList<>();
+	}
+	
+	/**
+	 * 
+	 * @return l'ArrayList contenant tous les Poids (et Paquets) poses sur le Plateau
+	 */
+	ArrayList<Poids> getPoidsPoses() {
+		return this.poidsPoses;
+	}
+	
+	/**
+	 * 
+	 * @param p Poids a ajouter sur le Plateau
+	 * Cette methode ajoute le Poids a l'ArrayList poidsPoses du Plateau
+	 * puis donne au Poids venant d'etre pose sa nouvelle position sur le Plateau
+	 */
+	void poser(Poids p) {
+		this.poidsPoses.add(p);
+		p.setPos(this.getPoidsPoses().size() - 1);
+	}
+	
+	/**
+	 * 
+	 * @param p Poids a retirer de l'ArrayList poidsPoses
+	 */
+	void retirer(Poids p) {
+		this.poidsPoses.remove(p.getPos());
+		// on reassigne -1 a la position du Poids car il n'est 
+		// plus pose sur aucun Plateau
+		p.setPos(-1);
+	}
+	
+	/**
+	 * La fonction getPoidsTotal de Plateau permet de recuperer le poids total
+	 * des Poids contenu sur une instance de Plateau en parcourant l'ArrayList poidsPoses
+	 * de celle-ci
+	 * @return int poidsTotal
+	 */
+	int getPoidsTotal() {
+		int poidsTotal = 0;
+		
+		for (Poids p: this.getPoidsPoses()) {
+			poidsTotal += p.getGrammes();
+		}
+		
+		return poidsTotal;
+	}
+}

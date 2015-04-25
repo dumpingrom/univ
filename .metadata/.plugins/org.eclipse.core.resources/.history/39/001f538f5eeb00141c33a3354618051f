@@ -1,0 +1,27 @@
+/**
+ * @author romain
+ *
+ */
+public class Poids {
+	int grammes;
+	
+	Poids(int g) {
+		this.grammes = g;
+	}
+	
+	/**
+	 *  
+	 * @param g (int) nouvelle valeur grammes du Poids
+	 */
+	void setGrammes(int g) {
+		this.grammes = g;
+	}
+	
+	/**
+	 * 
+	 * @return le poids en grammes du Poids courant
+	 */
+	int getGrammes() {
+		return this.grammes;
+	}
+}

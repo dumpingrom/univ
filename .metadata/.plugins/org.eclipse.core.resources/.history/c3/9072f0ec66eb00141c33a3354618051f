@@ -1,0 +1,79 @@
+/**
+ * @author romain
+ * La classe Balance possede deux attributs
+ * plateauGauche et plateauDroit, tous deux de type Plateau
+ *
+ */
+public class Balance {
+	Plateau plateauGauche;
+	Plateau plateauDroit;
+	
+	Balance() {
+		this.plateauDroit = new Plateau();
+		this.plateauGauche = new Plateau();
+	}
+	
+	void poseSurPlateauGauche(Poids p) {
+		if(p instanceof Paquet && this.plateauGauche.getPoidsPoses().size() > 0) {
+			System.out.println("Impossible de poser un Paquet sur un Plateau non vide !");
+		}
+		else {
+			this.plateauGauche.poser(p);
+			System.out.println("On pose un poids sur le Plateau gauche");
+		}
+	}
+	
+	void poseSurPlateauDroit(Poids p) {
+		if(p instanceof Paquet && this.plateauDroit.getPoidsPoses().size() > 0) {
+			System.out.println("Impossible de poser un Paquet sur un Plateau non vide !");
+		}
+		else {
+			this.plateauDroit.poser(p);
+			System.out.println("On pose un poids sur le Plateau droit");
+		}
+	}
+	
+	void afficheContenuPlateauGauche() {
+		if (this.plateauGauche.getPoidsPoses().size() == 0) {
+			System.out.println("Plateau gauche vide");
+		}
+		else {
+			System.out.println("Plateau gauche: " + this.plateauGauche.getPoidsTotal());
+		}
+	}
+	
+	void afficheContenuPlateauDroit() {
+		if (this.plateauDroit.getPoidsPoses().size() == 0) {
+			System.out.println("Plateau droit vide");
+		}
+		else {
+			System.out.println("Plateau droit: " + this.plateauDroit.getPoidsTotal());
+		}
+	}
+	
+	/**
+	 * afficheAiguille verifie le resultat de la difference entre
+	 * les poids totaux des Plateaux gauche et droit et affiche un message en
+	 * consequence
+	 * @return 0
+	 */
+	int afficheAiguille() {
+		int diff = this.plateauDroit.getPoidsTotal() - this.plateauGauche.getPoidsTotal();
+		
+		if(diff == 0) {
+			System.out.println("La balance est en equilibre");
+			return 0;
+		}
+		
+		if(diff > 0) {
+			System.out.println("L'aiguille penche a droite");
+			return 0;
+		}
+		
+		if(diff < 0) {
+			System.out.println("L'aiguille penche a gauche");
+		}
+		
+		return 0;
+	}
+}

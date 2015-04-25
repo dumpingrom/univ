@@ -1,0 +1,11 @@
+/**
+ * 
+ * @author romain
+ *
+ */
+public class Paquet extends Poids {
+
+	Paquet(int g) {
+		super(g);
+	}
+}

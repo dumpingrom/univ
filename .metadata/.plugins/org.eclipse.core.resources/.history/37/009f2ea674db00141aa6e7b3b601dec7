@@ -1,0 +1,14 @@
+
+public class NOT extends Composant{
+	NOT() {
+		this.entrees = new Composant[1];
+		this.sortie = null;
+	}
+
+	@Override
+	void miseAJour() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

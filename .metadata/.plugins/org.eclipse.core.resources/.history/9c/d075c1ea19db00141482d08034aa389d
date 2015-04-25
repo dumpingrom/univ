@@ -1,0 +1,17 @@
+
+class T1 extends Thread
+{
+	void f()
+	{
+		int i;
+		for (i=0;i<100;i++)
+		{
+			System.out.println("Je suis une instance de T1" );
+		}
+	}
+	
+	public void run() {
+		f();
+	}
+}
+

@@ -1,0 +1,18 @@
+
+public class BalanceDeRobertval {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Balance b = new Balance();
+		
+		Poids p1 = new Poids(100);
+		Poids p2 = new Poids(200);
+		Poids p3 = new Poids(200);
+		
+		Paquet pak = new Paquet(500);
+		
+		b.afficheContenuPlateauGauche();
+		b.afficheContenuPlateauDroit();
+	}
+
+}

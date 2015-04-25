@@ -1,0 +1,30 @@
+/**
+ * @author romain
+ * La classe Poids est une classe generale pour les poids et les paquets (classe fille)
+ * les poids possedent un unique attribut, l'entier grammes correspondant a leur poids
+ * en grammes
+ *
+ */
+public class Poids {
+	protected int grammes;
+	
+	Poids(int g) {
+		this.grammes = g;
+	}
+	
+	/**
+	 *  
+	 * @param g (int) nouvelle valeur grammes du Poids
+	 */
+	void setGrammes(int g) {
+		this.grammes = g;
+	}
+	
+	/**
+	 * 
+	 * @return le poids en grammes du Poids courant
+	 */
+	int getGrammes() {
+		return this.grammes;
+	}
+}

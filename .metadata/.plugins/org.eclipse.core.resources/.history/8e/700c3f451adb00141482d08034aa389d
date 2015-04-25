@@ -1,0 +1,28 @@
+
+class T1 extends Thread
+{
+	String nom;
+	
+	T1(String nom) {
+		this.nom = nom;
+	}
+	void f()
+	{
+		int i;
+		for (i=0;i<10;i++)
+		{
+			System.out.println(i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void run() {
+		f();
+	}
+}
+

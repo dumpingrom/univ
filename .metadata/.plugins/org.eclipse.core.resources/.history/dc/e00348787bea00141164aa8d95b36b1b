@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+
+/**
+ * @author romain
+ *
+ */
+public class Poids {
+	int grammes;
+	
+	Poids(int g) {
+		this.grammes = g;
+	}
+	
+	void setGrammes(int g) {
+		this.grammes = g;
+	}
+	
+	int getGrammes() {
+		return this.grammes;
+	}
+}

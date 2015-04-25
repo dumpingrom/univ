@@ -1,0 +1,13 @@
+/**
+ * @author romain
+ *
+ */
+public class Balance {
+	Plateau plateauGauche;
+	Plateau plateauDroit;
+	
+	Balance() {
+		this.plateauDroit = new Plateau();
+		this.plateauGauche = new Plateau();
+	}
+}

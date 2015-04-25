@@ -1,0 +1,21 @@
+
+public class NOT extends Composant{
+	NOT() {
+		this.entrees = new Composant[1];
+		this.entrees[0] = null;
+		this.sortie = null;
+	}
+
+	@Override
+	void miseAJour() {
+		// TODO Auto-generated method stub
+		System.out.println("NOT: Etat de " + this.entrees[0] + ": " + this.entrees[0].getEtat());
+		if(this.entrees[0].getEtat() == 1) {
+			this.setEtat(0);
+		}
+		else {
+			this.setEtat(1);
+		}
+	}
+
+}

@@ -1,0 +1,21 @@
+/**
+ * @author romain
+ *
+ */
+public class Plateau {
+	int grammes;
+	
+	Plateau() {}
+	
+	int getGrammes() {
+		return this.grammes;
+	}
+	
+	void poser(Poids p) {
+		this.grammes += p.getGrammes();
+	}
+	
+	void retirer(Poids p) {
+		this.grammes -= p.getGrammes();
+	}
+}

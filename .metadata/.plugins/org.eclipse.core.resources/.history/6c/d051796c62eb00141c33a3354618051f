@@ -1,0 +1,17 @@
+/**
+ * @author romain
+ * La classe Balance possede deux attributs
+ * plateauGauche et plateauDroit, tous deux de type Plateau
+ *
+ */
+public class Balance {
+	Plateau plateauGauche;
+	Plateau plateauDroit;
+	
+	Balance() {
+		this.plateauDroit = new Plateau();
+		this.plateauGauche = new Plateau();
+	}
+	
+	
+}

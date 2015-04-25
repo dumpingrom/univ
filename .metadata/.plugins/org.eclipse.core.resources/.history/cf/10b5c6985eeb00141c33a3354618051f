@@ -1,0 +1,6 @@
+
+public class Paquet extends Poids {
+	Paquet() {
+		super(grammes);
+	}
+}
