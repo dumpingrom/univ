@@ -26,14 +26,14 @@ public class Triangle {
     	//System.out.println("poseSurTable ==> Base = "+Triangle.base);
     	if (Triangle.base == null){
     		Triangle.base = this;
-    		System.out.println("gauche du triangle pose sur table = "+this.gauche);
+    		//System.out.println("gauche du triangle pose sur table = "+this.gauche);
     	}
     	else{
     		Triangle current = Triangle.base;
     		
     		while(current.droite != null){
     			current = current.droite;
-    			System.out.println("current = "+current);
+    			//System.out.println("current = "+current);
     		};
     		this.gauche = current;
     		current.droite = this;
