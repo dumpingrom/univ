@@ -1,6 +1,10 @@
 
 public class BalanceDeRobertval {
 
+	/**
+	 * Execution du programme
+	 * @param args
+	 */
 	public static void main(String[] args) {
     	System.out.println("\n__________________________\n\nPROGRAM INITIALISED\n__________________________\n\n");
 		
@@ -14,7 +18,12 @@ public class BalanceDeRobertval {
 		Paquet pak = new Paquet(500);
 		
 		b.poseSurPlateauGauche(p1);
+		b.poseSurPlateauGauche(p2);
+		b.poseSurPlateauGauche(p3);
+		
 		b.poseSurPlateauDroit(pak);
+		b.retireDePlateauGauche(p2);
+		b.retireDePlateauGauche(p1);
 		b.afficheContenuPlateauGauche();
 		b.afficheContenuPlateauDroit();
 		b.afficheAiguille();
