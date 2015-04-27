@@ -6,7 +6,11 @@
  */
 public class Paquet extends Poids {
 
-	Paquet(int g) {
+	/**
+	 * Constructeur de la classe Paquet contenant la methode super()
+	 * @param g int poids en grammes
+	 */
+	public Paquet(int g) {
 		super(g);
 	}
 }
