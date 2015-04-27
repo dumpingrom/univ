@@ -11,7 +11,7 @@ public class CircuitLogiqueSimulator {
 		NOT not = new NOT();
 		LED led1 = new LED("LED 1");
 		et.raccorde(un1);
-		et.raccorde(un2);
+		et.raccorde(ou);
 		not.raccorde(et);
 		led1.raccorde(not);
 	}
