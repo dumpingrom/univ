@@ -1,5 +1,6 @@
 /**
- * 
+ * La classe Dieu possede trois attributs, String nom, Dieu pere et Deesse mere
+ * Cette classe est la classe mere des classes Deesse et Upatos
  * @author romain
  *
  */
@@ -8,6 +9,12 @@ public class Dieu {
 	protected Dieu pere;
 	protected Deesse mere;
 	
+	/**
+	 * Constructeur de la classe Dieu
+	 * @param n String le nom du Dieu
+	 * @param p Dieu le pere du Dieu
+	 * @param m Deesse la mere du Dieu
+	 */
 	public Dieu(String n, Dieu p, Deesse m) {
 		this.nom = n;
 		this.pere = p;
@@ -17,14 +24,26 @@ public class Dieu {
 	/*
 	 * GETTERS
 	 */
+	/**
+	 * getter pour l'attribut nom
+	 * @return String le nom de l'instance de Dieu appelante
+	 */
 	public String getNom() {
 		return this.nom;
 	}
 	
+	/**
+	 * getter pour le pere du Dieu
+	 * @return Dieu l'instance correspondant au pere de l'instance de Dieu appelante
+	 */
 	public Dieu getPere() {
 		return this.pere;
 	}
 	
+	/**
+	 * getter pour la mere du Dieu
+	 * @return Deesse l'instance correspondant a la mere de l'instance de Dieu appelante
+	 */
 	public Deesse getMere() {
 		return this.mere;
 	}
@@ -33,14 +52,26 @@ public class Dieu {
 	 * SETTERS
 	 */
 	
+	/**
+	 * Permet d'attribuer une nouvelle valeur a l'attribut nom de l'instance appelante
+	 * @param n String le nouveau nom du Dieu
+	 */
 	public void setNom(String n) {
 		this.nom = n;
 	}
 	
+	/**
+	 * Permet d'attribuer une nouvelle valeur a l'attribut pere de l'instance appelante
+	 * @param p Dieu le nouveau pere du Dieu
+	 */
 	public void setPere(Dieu p) {
 		this.pere = p;
 	}
 	
+	/**
+	 * Permet d'attribuer une nouvelle valeur a l'attribut mere de l'instance appelante
+	 * @param m Deesse la nouvelle mere du Dieu
+	 */
 	public void setMere(Deesse m) {
 		this.mere = m;
 	}
@@ -49,6 +80,9 @@ public class Dieu {
 	 * END GETTERS / SETTERS
 	 */
 	
+	/**
+	 * Methode d'affichage non utilisee dans la version courante du projet
+	 */
 	void afficherDieu() {
 		System.out.println(this.getNom()+" vient de naitre de ");
 		if(this.getPere() != null) {
