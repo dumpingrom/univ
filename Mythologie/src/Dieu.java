@@ -16,9 +16,25 @@ public class Dieu {
 	 * @param m Deesse la mere du Dieu
 	 */
 	public Dieu(String n, Dieu p, Deesse m) {
-		this.nom = n;
-		this.pere = p;
-		this.mere = m;
+		boolean appeleParOrigine = false;
+		RuntimeException ex = new ExceptionDieu(n+" n'a pas ete cree par le big bang");
+		StackTraceElement[] ste = ex.getStackTrace();
+		
+		for (int i = 0; i < ste.length; i++) {
+			if(ste[i].getClassName() == "Origine") {
+				appeleParOrigine = true;
+			}
+		}
+		
+		if(appeleParOrigine == false) {
+			throw ex;
+		}
+		else {
+			this.nom = n;
+			this.pere = p;
+			this.mere = m;			
+		}
+		
 	}
 	
 	/*
