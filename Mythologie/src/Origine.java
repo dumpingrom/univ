@@ -1,18 +1,23 @@
 import java.util.*;
 
 /**
- * 
+ * La classe Origine contient uniquement la methode bigbang(), appellee par le
+ *  programme principal
  * @author romain
  *
  */
 public class Origine {
 	
+	/**
+	 * Constructeur vide de la classe Origine
+	 * qui ne peut etre instanciee (cnstructeur prive)
+	 */
 	private Origine() {
 		
 	}
 	
 	/**
-	 * Cette methode, qui est la seule a etre appelee dans le programme
+	 * Cette methode, qui est theoriquement la seule a etre appelee dans le programme
 	 * principal, contient les etapes suivantes :
 	 * - creation d'une liste olympe de type Dieu
 	 * - creation des Dieux
@@ -25,9 +30,6 @@ public class Origine {
 		final String ANSI_PURPLE = "\u001B[35m";
 		final String ANSI_RESET = "\u001B[0m";
 		
-		//creation d'une liste pour contenir tous les Dieux
-		Vector<Dieu> olympe = new Vector<Dieu>();
-		
 		//creation des Dieux
 		Dieu cronos = new Dieu("Cronos", null, null);
 		Deesse rhea = new Deesse("Rhea", null, null);
@@ -36,15 +38,16 @@ public class Origine {
 		zeus.setPere(cronos);
 		zeus.setMere(rhea);
 		Deesse hera = new Deesse("Hera", cronos, rhea);
+		Deesse demeter = new Deesse("Demeter", cronos, rhea);
+		Dieu hades = new Dieu("Hades", cronos, rhea);
+		Dieu poseidon = new Dieu("Poseidon", cronos, rhea);
+		Deesse hestia = new Deesse("Hestia", cronos, rhea);
 		Dieu ares = new Dieu("Ares", zeus, hera);
+		Deesse persephone = new Deesse("Persephone", zeus, demeter);
+		Deesse aphrodite = new Deesse("Aphrodite", zeus, hera);
 		
-		//ajout des Dieux à la liste
-		olympe.addElement(cronos);
-		olympe.addElement(rhea);
-		olympe.addElement(zeus);
-		olympe.addElement(hera);
-		olympe.addElement(ares);
-		
+		// recuperation du Vector static olympe de la classe Dieu
+		Vector<Dieu> olympe = Dieu.getOlympe();
 		//idee pour une amelioration, on demande le Dieu ou la Deesse dont on veut connaitre les ancetres
 		//decommenter pour tester
 		
@@ -84,10 +87,10 @@ public class Origine {
 				System.out.println("Ce Dieu n'existe pas");
 			}
 		}
+		System.out.println("______________________________________________\n\n");
 		
 		// fin idee pour amelioration
 		
-		System.out.println("______________________________________________\n\n");
 		//creation des chaines de caracteres pour l'affichage des lignees
 		String ligneeMasculine = ANSI_BLUE+"Lignee masculine : \n"+ANSI_RESET;
 		String ligneeFeminine = ANSI_PURPLE+"Lignee feminine : \n"+ANSI_RESET;

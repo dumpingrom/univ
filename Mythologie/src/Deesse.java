@@ -4,6 +4,9 @@
  *
  */
 public class Deesse extends Dieu {
+	
+	// a decommenter pour tester la creation d'un Dieu au sein d'une classe heritiere de Dieu
+	// Deesse testFauxDieu = new Deesse("Youpi", null, null);
 
 	/**
 	 * Constructeur de la classe Deesse avec super() sur le constructeur herite

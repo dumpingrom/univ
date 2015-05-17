@@ -1,5 +1,9 @@
+import java.util.Vector;
+
 /**
- * La classe Dieu possede trois attributs, String nom, Dieu pere et Deesse mere
+ * La classe Dieu possede quatre attributs, String nom, Dieu pere et Deesse mere
+ * et Vector<Dieu> olympe destine a contenir la totalite des instances de la classe (et
+ * de ses heritieres)
  * Cette classe est la classe mere des classes Deesse et Upatos
  * @author romain
  *
@@ -8,6 +12,7 @@ public class Dieu {
 	protected String nom;
 	protected Dieu pere;
 	protected Deesse mere;
+	protected static volatile Vector<Dieu> olympe = new Vector<Dieu>();
 	
 	/**
 	 * Constructeur de la classe Dieu
@@ -16,23 +21,47 @@ public class Dieu {
 	 * @param m Deesse la mere du Dieu
 	 */
 	public Dieu(String n, Dieu p, Deesse m) {
-		boolean appeleParOrigine = false;
-		RuntimeException ex = new ExceptionDieu(n+" n'a pas ete cree par le big bang");
+		// creation d'un booleen initialise a true
+		boolean appeleParOrigine = true;
+		// creation d'une instance de la classe ExceptionDieu heritiere de RuntimeException
+		// avec en parametre le mesage a afficher
+		ExceptionDieu ex = new ExceptionDieu("\n\u001B[31m"+n+" n'a pas ete cree par le big bang\u001B[0m");
+		// recuperation du tableau StackTraceElement 
 		StackTraceElement[] ste = ex.getStackTrace();
 		
-		for (int i = 0; i < ste.length; i++) {
-			if(ste[i].getClassName() == "Origine") {
-				appeleParOrigine = true;
+		if(ste.length > 2) {
+			System.out.println(ste.length);
+			if(ste[1].getClassName() != "Origine" && ste[2].getClassName() != "Origine" && !(this instanceof Upatos)) {
+				appeleParOrigine = false;
 			}
 		}
+		else {
+			appeleParOrigine = false;
+		}
 		
+		// on parcourt le tableau de StackTraceElement
+		// si la classe Origine a fait un appel, le booleen est vrai et la boucle est stoppee
+		/*for (int i = 0; i < ste.length; i++) {
+			System.out.println(n);
+			System.out.println(i+" => "+ste[i].getClassName()+"\n");
+			if(ste[i].getMethodName() == "bigbang" || (this instanceof Upatos)) {
+				appeleParOrigine = true;
+				break;
+			}
+		}*/
+		
+		// si le booleen est toujours faux apres l'instruction precedente
+		// on jette une exception ExceptionDieu et le programme s'arrete
 		if(appeleParOrigine == false) {
 			throw ex;
 		}
+		// sinon creation du Dieu
 		else {
 			this.nom = n;
 			this.pere = p;
-			this.mere = m;			
+			this.mere = m;
+			// ajout du Dieu a l'olympe pour iteration
+			olympe.addElement(this);
 		}
 		
 	}
@@ -50,7 +79,7 @@ public class Dieu {
 	
 	/**
 	 * getter pour le pere du Dieu
-	 * @return Dieu l'instance correspondant au pere de l'instance de Dieu appelante
+	 * @return Dieu l'instance correspondant au pere de l'instance de Dieu courante
 	 */
 	public Dieu getPere() {
 		return this.pere;
@@ -58,10 +87,18 @@ public class Dieu {
 	
 	/**
 	 * getter pour la mere du Dieu
-	 * @return Deesse l'instance correspondant a la mere de l'instance de Dieu appelante
+	 * @return Deesse l'instance correspondant a la mere de l'instance de Dieu courante
 	 */
 	public Deesse getMere() {
 		return this.mere;
+	}
+	
+	/**
+	 * Cette fonction renvoie le Vector olympe contenant l'ensemble des instances de la classe Dieu
+	 * @return Vector<Dieu> olympe, contenant toutes les instances de Dieu
+	 */
+	static Vector<Dieu> getOlympe() {
+		return olympe;
 	}
 	
 	/*
@@ -69,7 +106,7 @@ public class Dieu {
 	 */
 	
 	/**
-	 * Permet d'attribuer une nouvelle valeur a l'attribut nom de l'instance appelante
+	 * Permet d'attribuer une nouvelle valeur a l'attribut nom de l'instance courante
 	 * @param n String le nouveau nom du Dieu
 	 */
 	public void setNom(String n) {
@@ -77,7 +114,7 @@ public class Dieu {
 	}
 	
 	/**
-	 * Permet d'attribuer une nouvelle valeur a l'attribut pere de l'instance appelante
+	 * Permet d'attribuer une nouvelle valeur a l'attribut pere de l'instance courante
 	 * @param p Dieu le nouveau pere du Dieu
 	 */
 	public void setPere(Dieu p) {
@@ -85,7 +122,7 @@ public class Dieu {
 	}
 	
 	/**
-	 * Permet d'attribuer une nouvelle valeur a l'attribut mere de l'instance appelante
+	 * Permet d'attribuer une nouvelle valeur a l'attribut mere de l'instance courante
 	 * @param m Deesse la nouvelle mere du Dieu
 	 */
 	public void setMere(Deesse m) {
@@ -95,24 +132,4 @@ public class Dieu {
 	/*
 	 * END GETTERS / SETTERS
 	 */
-	
-	/**
-	 * Methode d'affichage non utilisee dans la version courante du projet
-	 */
-	void afficherDieu() {
-		System.out.println(this.getNom()+" vient de naitre de ");
-		if(this.getPere() != null) {
-			System.out.println(this.getPere().getNom());
-		}
-		else {
-			System.out.println("pere inconnu");
-		}
-		System.out.println(" et de ");
-		if(this.getMere() != null) {
-			System.out.println(this.getMere().getNom());
-		}
-		else {
-			System.out.println("mere inconnue");
-		}
-	}
 }

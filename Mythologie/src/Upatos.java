@@ -8,6 +8,8 @@
  */
 public class Upatos extends Dieu {
 	private static Upatos instance = null;
+	// a decommenter pour tester l'instanciation d'un Dieu par la classe Upatos
+	// Dieu fauxDieu = new Dieu("Pouet", null, null);
 	
 	/**
 	 * Constructeur de la classe Upatos
