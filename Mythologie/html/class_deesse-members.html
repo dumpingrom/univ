@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -95,7 +94,7 @@ $(document).ready(function(){initNavTree('class_deesse.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,15 +111,15 @@ $(document).ready(function(){initNavTree('class_deesse.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_deesse.html">Deesse</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_deesse.html#a19235b5cb61adddd597806ce464404e9">Deesse</a>(String n, Dieu p, Deesse m)</td><td class="entry"><a class="el" href="class_deesse.html">Deesse</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_dieu.html#a4dd4b261a290f3b020002c3acc550764">Dieu</a>(String n, Dieu p, Deesse m)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_deesse.html#addf73b6a6c7825b49f38d7664c9eb4b9">Deesse</a>(Object c, String n, Dieu p, Deesse m)</td><td class="entry"><a class="el" href="class_deesse.html">Deesse</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_dieu.html#a911a8e333050cfd73b3a43c01d80140b">Dieu</a>(Object classe, String n, Dieu p, Deesse m)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_dieu.html#a49620b5105573d34aee66062b2868c59">getMere</a>()</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_dieu.html#a127bd1cf7ce6f96f75df5ed1463b226f">getNom</a>()</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_dieu.html#a5a959c06487614affb921e45b2461a86">getPere</a>()</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_dieu.html#a87ec99b43ae57a2b45b1560f32f6079b">mere</a></td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_dieu.html#adf1cc2a0a19f987c3acfae89c756043b">nom</a></td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_dieu.html#aa28c4a043f59ab59d3d0400bc240e9d2">olympe</a></td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_dieu.html#a4b86e806709a1134c4819ee8d88e49bb">pere</a></td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>mere</b> (defined in <a class="el" href="class_dieu.html">Dieu</a>)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>nom</b> (defined in <a class="el" href="class_dieu.html">Dieu</a>)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>olympe</b> (defined in <a class="el" href="class_dieu.html">Dieu</a>)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>pere</b> (defined in <a class="el" href="class_dieu.html">Dieu</a>)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_dieu.html#a774022eca09385579f5e022cf2dd49f8">setMere</a>(Deesse m)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_dieu.html#a5a037410b599147fce37f1747c848e86">setNom</a>(String n)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_dieu.html#a0d844ebdf4fca966626704180c9c932e">setPere</a>(Dieu p)</td><td class="entry"><a class="el" href="class_dieu.html">Dieu</a></td><td class="entry"></td></tr>
@@ -129,7 +128,7 @@ $(document).ready(function(){initNavTree('class_deesse.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat May 16 2015 16:52:12 for Mythologie by
+    <li class="footer">Generated on Wed May 20 2015 11:15:33 for Mythologie by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -7,10 +7,13 @@ import java.util.*;
  *
  */
 public class Origine {
-	
+	/**
+	 * Creation d'une instance unique de la classe Origine
+	 */
+	private static final Origine origine = new Origine();
 	/**
 	 * Constructeur vide de la classe Origine
-	 * qui ne peut etre instanciee (cnstructeur prive)
+	 * Origine ne peut etre instanciee en dehors de la classe (constructeur prive)
 	 */
 	private Origine() {
 		
@@ -19,9 +22,9 @@ public class Origine {
 	/**
 	 * Cette methode, qui est theoriquement la seule a etre appelee dans le programme
 	 * principal, contient les etapes suivantes :
-	 * - creation d'une liste olympe de type Dieu
 	 * - creation des Dieux
-	 * - ajout des Dieux a la liste olympe
+	 * - (optionnel) boucle permettant d'afficher la descendance d'un Dieu entre au clavier
+	 * - recuperation du Vector static olympe de la classe Dieu
 	 * - recuperation des informations sur chaque lignee et affichage
 	 */
 	public static void bigbang() {
@@ -31,64 +34,83 @@ public class Origine {
 		final String ANSI_RESET = "\u001B[0m";
 		
 		//creation des Dieux
-		Dieu cronos = new Dieu("Cronos", null, null);
-		Deesse rhea = new Deesse("Rhea", null, null);
+		Dieu cronos = new Dieu(origine, "Cronos", null, null);
+		Deesse rhea = new Deesse(origine, "Rhea", null, null);
 		Dieu zeus = Upatos.getInstance();
 		zeus.setNom("Zeus");
 		zeus.setPere(cronos);
 		zeus.setMere(rhea);
-		Deesse hera = new Deesse("Hera", cronos, rhea);
-		Deesse demeter = new Deesse("Demeter", cronos, rhea);
-		Dieu hades = new Dieu("Hades", cronos, rhea);
-		Dieu poseidon = new Dieu("Poseidon", cronos, rhea);
-		Deesse hestia = new Deesse("Hestia", cronos, rhea);
-		Dieu ares = new Dieu("Ares", zeus, hera);
-		Deesse persephone = new Deesse("Persephone", zeus, demeter);
-		Deesse aphrodite = new Deesse("Aphrodite", zeus, hera);
+		Deesse hera = new Deesse(origine, "Hera", cronos, rhea);
+		Deesse demeter = new Deesse(origine, "Demeter", cronos, rhea);
+		Dieu hades = new Dieu(origine, "Hades", cronos, rhea);
+		Dieu poseidon = new Dieu(origine, "Poseidon", cronos, rhea);
+		Deesse hestia = new Deesse(origine, "Hestia", cronos, rhea);
+		Dieu ares = new Dieu(origine, "Ares", zeus, hera);
+		Deesse persephone = new Deesse(origine, "Persephone", zeus, demeter);
+		Deesse aphrodite = new Deesse(origine, "Aphrodite", zeus, hera);
 		
 		// recuperation du Vector static olympe de la classe Dieu
 		Vector<Dieu> olympe = Dieu.getOlympe();
+		
 		//idee pour une amelioration, on demande le Dieu ou la Deesse dont on veut connaitre les ancetres
 		//decommenter pour tester
 		
+		/* System.out.println("Voici les divinites existantes :");
+		String divinites = "";
+		for (Iterator<Dieu> i = olympe.iterator(); i.hasNext();) {
+			Dieu d = i.next();
+			if (!i.hasNext()) {
+				divinites += d.getNom()+".";
+			}
+			else {
+				divinites += d.getNom()+", ";				
+			}
+		}
+		System.out.println(divinites);
 		
-		System.out.println("De quel divinite desires-tu connaitre les ancetres, mortel ?");
 		
 		String ch = "";
 		Scanner input = new Scanner(System.in);
-		ch = input.next();
 		
-		// on parcourt le tableau olympe
-		for(int i = 0; i < olympe.size(); i++) {
-			Dieu d = olympe.get(i);
-			String pere;
-			String mere;
-			//si le nom entre existe
-			if (ch.equalsIgnoreCase(d.getNom())) {
-				// si la divinite n'a pas de pere, on assigne inconnu a la chaine pere
-				if(d.getPere() == null) {
-					pere = "inconnu";
-				}
-				else {
-					pere = d.getPere().getNom();
-				}
-				//idem pour la mere
-				if(d.getMere() == null) {
-					mere = "inconnue";
-				}
-				else {
-					mere = d.getMere().getNom();
-				}
-				
-				System.out.println(d.getNom()+" | pere : "+pere+", mere : "+mere);
+		
+		while(true) {
+			System.out.println("De quel divinite desires-tu connaitre les ancetres, mortel ? (q pour quitter)");
+			ch = input.next();
+			if(ch.equalsIgnoreCase("q")) {
 				break;
 			}
-			if(i == olympe.size()-1) {
-				System.out.println("Ce Dieu n'existe pas");
+			// on parcourt le tableau olympe
+			for(Iterator<Dieu> i = olympe.iterator(); i.hasNext();) {
+				Dieu d = i.next();
+				String pere;
+				String mere;
+				//si le nom entre existe
+				if (ch.equalsIgnoreCase(d.getNom())) {
+					// si la divinite n'a pas de pere, on assigne inconnu a la chaine pere
+					if(d.getPere() == null) {
+						pere = "inconnu";
+					}
+					else {
+						pere = d.getPere().getNom();
+					}
+					//idem pour la mere
+					if(d.getMere() == null) {
+						mere = "inconnue";
+					}
+					else {
+						mere = d.getMere().getNom();
+					}
+					
+					System.out.println("\n"+d.getNom()+" | pere : "+pere+", mere : "+mere);
+					// on stoppe la boucle si le Dieu est trouve
+					break;
+				}
+				if(!i.hasNext()) {
+					System.out.println("\nCette divinite n'existe pas");
+				}
 			}
-		}
-		System.out.println("______________________________________________\n\n");
-		
+			System.out.println("______________________________________________\n\n");	
+		}*/
 		// fin idee pour amelioration
 		
 		//creation des chaines de caracteres pour l'affichage des lignees
@@ -115,6 +137,7 @@ public class Origine {
 		}
 		
 		//affichage des informations creees
+		System.out.println("\n");
 		System.out.println(ligneeMasculine);
 		System.out.println(ligneeFeminine);
 	}

@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -79,7 +78,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
-      <li><a href="functions_vars.html"><span>Variables</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -102,7 +100,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,15 +110,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div><ul>
+<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><ul>
 <li>bigbang()
 : <a class="el" href="class_origine.html#a418a9e1f8a8702622e901dfac8809140">Origine</a>
 </li>
 <li>Deesse()
-: <a class="el" href="class_deesse.html#a19235b5cb61adddd597806ce464404e9">Deesse</a>
+: <a class="el" href="class_deesse.html#addf73b6a6c7825b49f38d7664c9eb4b9">Deesse</a>
 </li>
 <li>Dieu()
-: <a class="el" href="class_dieu.html#a4dd4b261a290f3b020002c3acc550764">Dieu</a>
+: <a class="el" href="class_dieu.html#a911a8e333050cfd73b3a43c01d80140b">Dieu</a>
 </li>
 <li>ExceptionDieu()
 : <a class="el" href="class_exception_dieu.html#a27859569bcbf168b8386d3a67e717f09">ExceptionDieu</a>
@@ -137,21 +135,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getPere()
 : <a class="el" href="class_dieu.html#a5a959c06487614affb921e45b2461a86">Dieu</a>
 </li>
-<li>main()
-: <a class="el" href="class_mythologie.html#af2cca2dfa93fdd5522df5abbd7b70aae">Mythologie</a>
-</li>
-<li>mere
-: <a class="el" href="class_dieu.html#a87ec99b43ae57a2b45b1560f32f6079b">Dieu</a>
-</li>
-<li>nom
-: <a class="el" href="class_dieu.html#adf1cc2a0a19f987c3acfae89c756043b">Dieu</a>
-</li>
-<li>olympe
-: <a class="el" href="class_dieu.html#aa28c4a043f59ab59d3d0400bc240e9d2">Dieu</a>
-</li>
-<li>pere
-: <a class="el" href="class_dieu.html#a4b86e806709a1134c4819ee8d88e49bb">Dieu</a>
-</li>
 <li>setMere()
 : <a class="el" href="class_dieu.html#a774022eca09385579f5e022cf2dd49f8">Dieu</a>
 </li>
@@ -167,7 +150,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat May 16 2015 16:52:12 for Mythologie by
+    <li class="footer">Generated on Wed May 20 2015 11:15:33 for Mythologie by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

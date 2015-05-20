@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -95,7 +94,7 @@ $(document).ready(function(){initNavTree('class_dieu.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -127,8 +126,8 @@ Inheritance diagram for Dieu:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4dd4b261a290f3b020002c3acc550764"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#a4dd4b261a290f3b020002c3acc550764">Dieu</a> (String n, <a class="el" href="class_dieu.html">Dieu</a> p, <a class="el" href="class_deesse.html">Deesse</a> m)</td></tr>
-<tr class="separator:a4dd4b261a290f3b020002c3acc550764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a911a8e333050cfd73b3a43c01d80140b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#a911a8e333050cfd73b3a43c01d80140b">Dieu</a> (Object classe, String n, <a class="el" href="class_dieu.html">Dieu</a> p, <a class="el" href="class_deesse.html">Deesse</a> m)</td></tr>
+<tr class="separator:a911a8e333050cfd73b3a43c01d80140b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a127bd1cf7ce6f96f75df5ed1463b226f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#a127bd1cf7ce6f96f75df5ed1463b226f">getNom</a> ()</td></tr>
 <tr class="separator:a127bd1cf7ce6f96f75df5ed1463b226f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a959c06487614affb921e45b2461a86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dieu.html">Dieu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#a5a959c06487614affb921e45b2461a86">getPere</a> ()</td></tr>
@@ -144,29 +143,39 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:adf1cc2a0a19f987c3acfae89c756043b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#adf1cc2a0a19f987c3acfae89c756043b">nom</a></td></tr>
+<tr class="memitem:adf1cc2a0a19f987c3acfae89c756043b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf1cc2a0a19f987c3acfae89c756043b"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>nom</b></td></tr>
 <tr class="separator:adf1cc2a0a19f987c3acfae89c756043b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b86e806709a1134c4819ee8d88e49bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dieu.html">Dieu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#a4b86e806709a1134c4819ee8d88e49bb">pere</a></td></tr>
+<tr class="memitem:a4b86e806709a1134c4819ee8d88e49bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b86e806709a1134c4819ee8d88e49bb"></a>
+<a class="el" href="class_dieu.html">Dieu</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pere</b></td></tr>
 <tr class="separator:a4b86e806709a1134c4819ee8d88e49bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87ec99b43ae57a2b45b1560f32f6079b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_deesse.html">Deesse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#a87ec99b43ae57a2b45b1560f32f6079b">mere</a></td></tr>
+<tr class="memitem:a87ec99b43ae57a2b45b1560f32f6079b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87ec99b43ae57a2b45b1560f32f6079b"></a>
+<a class="el" href="class_deesse.html">Deesse</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mere</b></td></tr>
 <tr class="separator:a87ec99b43ae57a2b45b1560f32f6079b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:aa28c4a043f59ab59d3d0400bc240e9d2"><td class="memItemLeft" align="right" valign="top">static volatile Vector&lt; <a class="el" href="class_dieu.html">Dieu</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dieu.html#aa28c4a043f59ab59d3d0400bc240e9d2">olympe</a> = new Vector&lt;<a class="el" href="class_dieu.html">Dieu</a>&gt;()</td></tr>
+<tr class="memitem:aa28c4a043f59ab59d3d0400bc240e9d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa28c4a043f59ab59d3d0400bc240e9d2"></a>
+static volatile Vector&lt; <a class="el" href="class_dieu.html">Dieu</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>olympe</b> = new Vector&lt;<a class="el" href="class_dieu.html">Dieu</a>&gt;()</td></tr>
 <tr class="separator:aa28c4a043f59ab59d3d0400bc240e9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>La classe <a class="el" href="class_dieu.html">Dieu</a> possede quatre attributs, String nom, <a class="el" href="class_dieu.html">Dieu</a> pere et <a class="el" href="class_deesse.html">Deesse</a> mere et Vector&lt;Dieu&gt; olympe destine a contenir la totalite des instances de la classe (et de ses heritieres) Cette classe est la classe mere des classes <a class="el" href="class_deesse.html">Deesse</a> et <a class="el" href="class_upatos.html">Upatos</a> </p>
+<div class="textblock"><p>La classe <a class="el" href="class_dieu.html">Dieu</a> possede quatre attributs, String nom, <a class="el" href="class_dieu.html">Dieu</a> pere et <a class="el" href="class_deesse.html">Deesse</a> mere et Vector&lt;Dieu&gt; olympe, attribut static destine a contenir la totalite des instances de la classe (et de ses heritieres) Cette classe est la classe mere des classes <a class="el" href="class_deesse.html">Deesse</a> et <a class="el" href="class_upatos.html">Upatos</a> </p>
 <dl class="section author"><dt>Author</dt><dd>romain </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a4dd4b261a290f3b020002c3acc550764"></a>
+<a class="anchor" id="a911a8e333050cfd73b3a43c01d80140b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Dieu.Dieu </td>
           <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>classe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">String&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
@@ -192,6 +201,7 @@ Static Protected Attributes</h2></td></tr>
 <p>Constructeur de la classe <a class="el" href="class_dieu.html">Dieu</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">classe</td><td>Object, objet devant etre de la classe <a class="el" href="class_origine.html">Origine</a> </td></tr>
     <tr><td class="paramname">n</td><td>String le nom du <a class="el" href="class_dieu.html">Dieu</a> </td></tr>
     <tr><td class="paramname">p</td><td><a class="el" href="class_dieu.html">Dieu</a> le pere du <a class="el" href="class_dieu.html">Dieu</a> </td></tr>
     <tr><td class="paramname">m</td><td><a class="el" href="class_deesse.html">Deesse</a> la mere du <a class="el" href="class_dieu.html">Dieu</a> </td></tr>
@@ -232,7 +242,7 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>getter pour l'attribut nom </p>
-<dl class="section return"><dt>Returns</dt><dd>String le nom de l'instance de <a class="el" href="class_dieu.html">Dieu</a> appelante </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>String le nom de l'instance de <a class="el" href="class_dieu.html">Dieu</a> courante </dd></dl>
 
 </div>
 </div>
@@ -322,89 +332,8 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a87ec99b43ae57a2b45b1560f32f6079b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_deesse.html">Deesse</a> Dieu.mere</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="adf1cc2a0a19f987c3acfae89c756043b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String Dieu.nom</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa28c4a043f59ab59d3d0400bc240e9d2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile Vector&lt;<a class="el" href="class_dieu.html">Dieu</a>&gt; Dieu.olympe = new Vector&lt;<a class="el" href="class_dieu.html">Dieu</a>&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4b86e806709a1134c4819ee8d88e49bb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_dieu.html">Dieu</a> Dieu.pere</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="_dieu_8java.html">Dieu.java</a></li>
+<li>src/Dieu.java</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -412,7 +341,7 @@ Static Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_dieu.html">Dieu</a></li>
-    <li class="footer">Generated on Sat May 16 2015 16:52:12 for Mythologie by
+    <li class="footer">Generated on Wed May 20 2015 11:15:33 for Mythologie by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

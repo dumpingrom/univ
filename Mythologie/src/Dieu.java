@@ -2,8 +2,8 @@ import java.util.Vector;
 
 /**
  * La classe Dieu possede quatre attributs, String nom, Dieu pere et Deesse mere
- * et Vector<Dieu> olympe destine a contenir la totalite des instances de la classe (et
- * de ses heritieres)
+ * et Vector<Dieu> olympe, attribut static destine a contenir la totalite des instances 
+ * de la classe (et de ses heritieres)
  * Cette classe est la classe mere des classes Deesse et Upatos
  * @author romain
  *
@@ -16,52 +16,28 @@ public class Dieu {
 	
 	/**
 	 * Constructeur de la classe Dieu
+	 * @param classe Object, objet devant etre de la classe Origine
 	 * @param n String le nom du Dieu
 	 * @param p Dieu le pere du Dieu
 	 * @param m Deesse la mere du Dieu
 	 */
-	public Dieu(String n, Dieu p, Deesse m) {
-		// creation d'un booleen initialise a true
-		boolean appeleParOrigine = true;
+	public Dieu(Object classe, String n, Dieu p, Deesse m) {
 		// creation d'une instance de la classe ExceptionDieu heritiere de RuntimeException
 		// avec en parametre le mesage a afficher
 		ExceptionDieu ex = new ExceptionDieu("\n\u001B[31m"+n+" n'a pas ete cree par le big bang\u001B[0m");
-		// recuperation du tableau StackTraceElement 
-		StackTraceElement[] ste = ex.getStackTrace();
 		
-		if(ste.length > 2) {
-			System.out.println(ste.length);
-			if(ste[1].getClassName() != "Origine" && ste[2].getClassName() != "Origine" && !(this instanceof Upatos)) {
-				appeleParOrigine = false;
-			}
-		}
-		else {
-			appeleParOrigine = false;
-		}
-		
-		// on parcourt le tableau de StackTraceElement
-		// si la classe Origine a fait un appel, le booleen est vrai et la boucle est stoppee
-		/*for (int i = 0; i < ste.length; i++) {
-			System.out.println(n);
-			System.out.println(i+" => "+ste[i].getClassName()+"\n");
-			if(ste[i].getMethodName() == "bigbang" || (this instanceof Upatos)) {
-				appeleParOrigine = true;
-				break;
-			}
-		}*/
-		
-		// si le booleen est toujours faux apres l'instruction precedente
-		// on jette une exception ExceptionDieu et le programme s'arrete
-		if(appeleParOrigine == false) {
-			throw ex;
-		}
-		// sinon creation du Dieu
-		else {
+		// si le parametre classe est une instance de la classe Origine, ou si
+		// cette instance est de la classe Upatos, on assigne les valeurs aux attributs
+		// sinon ExceptionDieu
+		if(classe instanceof Origine || this instanceof Upatos) {
 			this.nom = n;
 			this.pere = p;
 			this.mere = m;
 			// ajout du Dieu a l'olympe pour iteration
 			olympe.addElement(this);
+		}
+		else {
+			throw ex;
 		}
 		
 	}
@@ -71,7 +47,7 @@ public class Dieu {
 	 */
 	/**
 	 * getter pour l'attribut nom
-	 * @return String le nom de l'instance de Dieu appelante
+	 * @return String le nom de l'instance de Dieu courante
 	 */
 	public String getNom() {
 		return this.nom;

@@ -10,7 +10,7 @@ public class Mythologie {
     	System.out.println("\n__________________________\n\nPROGRAM INITIALISED\n__________________________\n\n");
 		
 		// cet appel generera une exception, decommenter pour tester
-		// Dieu fauxDieu = new Dieu("Faux Dieu", null, null);
+		// Dieu fauxDieu = new Dieu(null, "Faux Dieu", null, null);
 		
 		Origine.bigbang();
 		

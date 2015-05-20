@@ -3,6 +3,7 @@
  * Cette classe contient un unique attribut statique,
  * instance, qui contiendra l'unique instance d'Upatos
  * qui peut etre creee dans le programme
+ * Upatos herite de Dieu
  * @author romain
  *
  */
@@ -18,7 +19,7 @@ public class Upatos extends Dieu {
 	 * de la classe Origine grace aux setters herites de la classe Dieu
 	 */
 	private Upatos() {
-		super(null, null, null);
+		super(null, null, null, null);
 	}
 	
 	/**
